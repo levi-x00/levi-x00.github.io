@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'AWS Landing Zone'
-cover: './my-lza.svg'
+cover: './my-lza.png'
 github: 'https://github.com/levi-x00'
 external: 'https://github.com/levi-x00'
 cta: ''

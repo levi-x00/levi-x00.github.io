@@ -1,7 +1,7 @@
 ---
 date: '2'
 title: 'EKS Platform'
-cover: './demo.png'
+cover: './eks-platform.png'
 github: 'https://github.com/levi-x00'
 external: 'https://github.com/levi-x00'
 tech:

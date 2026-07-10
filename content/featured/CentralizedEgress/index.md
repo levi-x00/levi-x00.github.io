@@ -1,7 +1,7 @@
 ---
 date: '3'
 title: 'Centralized Egress Architecture'
-cover: './demo.png'
+cover: './lza-centralized-egress.png'
 github: 'https://github.com/levi-x00'
 external: 'https://github.com/levi-x00'
 tech:
