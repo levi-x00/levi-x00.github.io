@@ -22,6 +22,7 @@ const StyledProject = styled.li`
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: start;
+  grid-template-rows: auto;
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
@@ -42,6 +43,7 @@ const StyledProject = styled.li`
   &:nth-of-type(odd) {
     .project-content {
       grid-column: 7 / -1;
+      grid-row: 1;
       text-align: right;
 
       @media (max-width: 1080px) {
@@ -84,6 +86,7 @@ const StyledProject = styled.li`
     }
     .project-image {
       grid-column: 1 / 7;
+      grid-row: 1;
 
       @media (max-width: 1080px) {
         grid-column: 1 / 6;
@@ -97,6 +100,7 @@ const StyledProject = styled.li`
   .project-content {
     position: relative;
     grid-column: 1 / 7;
+    grid-row: 1;
 
     @media (max-width: 1080px) {
       grid-column: 1 / 8;
@@ -245,6 +249,7 @@ const StyledProject = styled.li`
   .project-image {
     ${({ theme }) => theme.mixins.boxShadow};
     grid-column: 7 / -1;
+    grid-row: 1;
     position: relative;
     z-index: 1;
 
