@@ -21,7 +21,7 @@ const StyledProject = styled.li`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(12, 1fr);
-  align-items: center;
+  align-items: start;
 
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
@@ -42,15 +42,13 @@ const StyledProject = styled.li`
   &:nth-of-type(odd) {
     .project-content {
       grid-column: 7 / -1;
-      grid-row: 2;
       text-align: right;
 
       @media (max-width: 1080px) {
-        grid-column: 5 / -1;
+        grid-column: 6 / -1;
       }
       @media (max-width: 768px) {
         grid-column: 1 / -1;
-        grid-row: 2;
         padding: 40px 40px 30px;
         text-align: left;
       }
@@ -85,12 +83,13 @@ const StyledProject = styled.li`
       }
     }
     .project-image {
-      grid-column: 1 / 8;
-      grid-row: 1 / 3;
+      grid-column: 1 / 7;
 
+      @media (max-width: 1080px) {
+        grid-column: 1 / 6;
+      }
       @media (max-width: 768px) {
         grid-column: 1 / -1;
-        grid-row: 1;
       }
     }
   }
@@ -98,11 +97,9 @@ const StyledProject = styled.li`
   .project-content {
     position: relative;
     grid-column: 1 / 7;
-    grid-row: 2;
-    z-index: 4;
 
     @media (max-width: 1080px) {
-      grid-column: 1 / 9;
+      grid-column: 1 / 8;
     }
 
     @media (max-width: 768px) {
@@ -111,7 +108,6 @@ const StyledProject = styled.li`
       justify-content: center;
       height: 100%;
       grid-column: 1 / -1;
-      grid-row: 2;
       padding: 40px 40px 30px;
       z-index: 5;
     }
@@ -248,11 +244,13 @@ const StyledProject = styled.li`
 
   .project-image {
     ${({ theme }) => theme.mixins.boxShadow};
-    grid-column: 6 / -1;
-    grid-row: 1 / 3;
+    grid-column: 7 / -1;
     position: relative;
     z-index: 1;
 
+    @media (max-width: 1080px) {
+      grid-column: 8 / -1;
+    }
     @media (max-width: 768px) {
       grid-column: 1 / -1;
       height: 100%;
