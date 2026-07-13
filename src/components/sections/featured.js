@@ -42,6 +42,7 @@ const StyledProject = styled.li`
   &:nth-of-type(odd) {
     .project-content {
       grid-column: 7 / -1;
+      grid-row: 2;
       text-align: right;
 
       @media (max-width: 1080px) {
@@ -49,6 +50,7 @@ const StyledProject = styled.li`
       }
       @media (max-width: 768px) {
         grid-column: 1 / -1;
+        grid-row: 2;
         padding: 40px 40px 30px;
         text-align: left;
       }
@@ -84,9 +86,11 @@ const StyledProject = styled.li`
     }
     .project-image {
       grid-column: 1 / 8;
+      grid-row: 1 / 3;
 
       @media (max-width: 768px) {
         grid-column: 1 / -1;
+        grid-row: 1;
       }
     }
   }
@@ -94,7 +98,8 @@ const StyledProject = styled.li`
   .project-content {
     position: relative;
     grid-column: 1 / 7;
-    grid-row: 1 / -1;
+    grid-row: 2;
+    z-index: 4;
 
     @media (max-width: 1080px) {
       grid-column: 1 / 9;
@@ -106,6 +111,7 @@ const StyledProject = styled.li`
       justify-content: center;
       height: 100%;
       grid-column: 1 / -1;
+      grid-row: 2;
       padding: 40px 40px 30px;
       z-index: 5;
     }
@@ -243,7 +249,7 @@ const StyledProject = styled.li`
   .project-image {
     ${({ theme }) => theme.mixins.boxShadow};
     grid-column: 6 / -1;
-    grid-row: 1 / -1;
+    grid-row: 1 / 3;
     position: relative;
     z-index: 1;
 
