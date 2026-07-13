@@ -2,8 +2,8 @@
 date: '4'
 title: 'ECS Blue/Green Deployment Pipeline'
 cover: './ecs-platform.png'
-github: 'https://github.com/levi-x00'
-external: 'https://github.com/levi-x00'
+github: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/01-modernize-with-ecs'
+external: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/01-modernize-with-ecs'
 cta: ''
 tech:
   - ECS

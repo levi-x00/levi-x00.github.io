@@ -2,8 +2,8 @@
 date: '3'
 title: 'Centralized Egress Architecture'
 cover: './lza-centralized-egress.png'
-github: 'https://github.com/levi-x00'
-external: 'https://github.com/levi-x00'
+github: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/03-centralized-egress'
+external: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/03-centralized-egress'
 tech:
   - Transit Gateway
   - AWS Network Firewall

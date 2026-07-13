@@ -2,8 +2,8 @@
 date: '2'
 title: 'EKS Platform'
 cover: './eks-platform.png'
-github: 'https://github.com/levi-x00'
-external: 'https://github.com/levi-x00'
+github: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/04-modernize-with-eks'
+external: 'https://github.com/levi-x00/my-devops-portfolio/tree/master/04-modernize-with-eks'
 tech:
   - EKS
   - Karpenter
