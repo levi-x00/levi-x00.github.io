@@ -20,10 +20,20 @@ describe("Portfolio requirements", () => {
 
   it("centralizes all portfolio content in data files", () => {
     expect(hero.name).toBe("LEVI");
+    expect(hero.resumeLink).toBe("/resume.pdf");
+    expect(experience.map((item) => item.company)).toEqual([
+      "PT Innovation Cloud Service Compute",
+      "Feedloop",
+      "SEON Technologies",
+      "Cloud Comrade",
+      "Xtremax",
+    ]);
+    expect(education[0].schoolName).toBe("Telkom University");
     expect(socialLinks.github).toBe("https://github.com/levi-x00");
     expect(skillGroups.map((group) => group.title)).toEqual([
       "Cloud & DevOps",
       "CI/CD & Automation",
+      "Scripting & Programming",
       "Security & Observability",
     ]);
     expect(
@@ -33,12 +43,16 @@ describe("Portfolio requirements", () => {
     ).toEqual(
       expect.arrayContaining([
         "AWS",
-        "Lambda",
+        "GCP",
         "Serverless",
         "Terraform",
         "Docker",
         "Kubernetes",
+        "Linux",
         "Argo CD",
+        "Jenkins",
+        "Ansible",
+        "Git",
         "Python",
         "Bash",
         "PowerShell",
@@ -46,6 +60,8 @@ describe("Portfolio requirements", () => {
         "CodePipeline",
         "Datadog",
         "Grafana",
+        "Prometheus",
+        "Sonarqube",
       ]),
     );
     expect(proficiency).toEqual([
@@ -176,9 +192,10 @@ describe("Portfolio requirements", () => {
       skillGroups.every((group) => group.softwareSkills.length <= 7),
     ).toBe(true);
     expect(badgeNames).not.toEqual(
-      expect.arrayContaining(["Podman", "CI/CD", "DevSecOps", "TrueWatch"]),
+      expect.arrayContaining(["Podman", "CI/CD", "DevSecOps"]),
     );
     expect(capabilityText).toContain("Podman");
+    expect(capabilityText).toContain("Lambda");
     expect(capabilityText).toContain("CI/CD");
     expect(capabilityText).toContain("DevSecOps");
     expect(capabilityText).toContain("TrueWatch");

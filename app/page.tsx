@@ -15,7 +15,7 @@ import { projects } from "@/data/projects";
 const fallbackGithub: GithubProfile = {
   avatar_url: "https://avatars.githubusercontent.com/levi-x00",
   bio: "Available for freelance",
-  location: "Jakarta, Indonesia",
+  location: "Indonesia",
   html_url: "https://github.com/levi-x00",
   login: "levi-x00",
 };
@@ -77,7 +77,7 @@ export default async function Home() {
           <ProjectsSection />
         </SectionWrapper>
       ) : null}
-      <SectionWrapper id="contact" num="07">
+      <SectionWrapper id="contact" num="06">
         <ContactSection github={github} />
       </SectionWrapper>
     </PageShell>

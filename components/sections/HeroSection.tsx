@@ -58,7 +58,9 @@ export function HeroSection() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           {hero.resumeLink ? (
             <Button asChild>
-              <a href={hero.resumeLink}>[ SEE MY RESUME ]</a>
+              <a href={hero.resumeLink} target="_blank" rel="noreferrer">
+                [ SEE MY RESUME ]
+              </a>
             </Button>
           ) : (
             <Button asChild>

@@ -48,13 +48,13 @@ export function ExperienceCard({
 			</div>
 			<div className="my-4 border-t border-terminal-border" />
 			{desc && (
-				<p className="text-sm leading-relaxed text-terminal-soft">
+				<p className="max-w-3xl text-sm leading-relaxed text-terminal-soft">
 					<span className="text-terminal-signal">&gt; </span>
 					{desc}
 				</p>
 			)}
 			{descBullets?.length ? (
-				<ul className="mt-3 space-y-1">
+				<ul className="mt-3 max-w-3xl space-y-1">
 					{descBullets.map((bullet) => (
 						<li
 							key={bullet}
