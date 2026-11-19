@@ -10,7 +10,6 @@ const Feedbacks = dynamic(() => import("../containers/Feedbacks"));
 const GithubProfileCard = dynamic(() => import("../components/GithubProfileCard"));
 import { openSource } from "../portfolio";
 import SEO from "../components/SEO";
-import { GithubUserType } from "../types";
 
 export default function Home({ githubProfileData }: { githubProfileData: any }) {
   return (
@@ -33,10 +32,24 @@ export default function Home({ githubProfileData }: { githubProfileData: any }) 
 //   githubProfileData: PropTypes.object.isRequired,
 // };
 
+const profileFallback = {
+  avatar_url: "https://avatars.githubusercontent.com/levi-x00",
+  bio: "Available for freelance",
+  location: "Jakarta, Indonesia",
+};
+
 export async function getStaticProps() {
-  const githubProfileData: GithubUserType = await fetch(
-    `https://api.github.com/users/${openSource.githubUserName}`
-  ).then(res => res.json());
+  // CI runners share IPs, so unauthenticated GitHub API calls get rate-limited.
+  const headers: HeadersInit = process.env.GITHUB_TOKEN
+    ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+    : {};
+  const res = await fetch(
+    `https://api.github.com/users/${openSource.githubUserName}`,
+    { headers }
+  );
+  const githubProfileData = res.ok
+    ? { ...profileFallback, ...(await res.json()) }
+    : profileFallback;
 
   return {
     props: { githubProfileData },
