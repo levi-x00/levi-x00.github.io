@@ -1,31 +1,41 @@
 # levi-x00.github.io
 
-Personal portfolio of Levi, Senior DevOps Engineer based in Jakarta, Indonesia.
-Cloud, DevSecOps, and serverless by day; cybersecurity and agentic AI by curiosity.
+Levi's portfolio — a brutalist, terminal-styled static site built with Next.js
+(App Router) and Tailwind CSS. Design based on
+[1hanzla100/1hanzla100.github.io](https://github.com/1hanzla100/1hanzla100.github.io).
 
-Built with Next.js and the Argon design system, based on the
-[developer-portfolio](https://github.com/1hanzla100/developer-portfolio) template (MIT).
-
-## Edit content
-
-Everything shown on the site lives in `portfolio.ts`: greetings, social links,
-skills, proficiency bars, education, experience, projects, feedbacks, and SEO.
-Empty arrays hide their section.
-
-## Run locally
+## Develop
 
 ```bash
-npm install --legacy-peer-deps
+npm ci
 npm run dev
 ```
 
-## Build for GitHub Pages
+## Build
 
 ```bash
 npm run build
-npm run export
 ```
 
-The static site lands in `out/`.
-Publish that directory to GitHub Pages (for example with an Actions workflow
-that uploads `out/` as the Pages artifact).
+`next.config.ts` sets `output: "export"`, so the build writes a fully static
+site to `out/`. Serve it locally with `python3 -m http.server -d out`.
+
+## Test
+
+```bash
+npm test
+```
+
+## Deploy
+
+Pushing to `master` runs `.github/workflows/deploy.yml`, which builds the static
+export and publishes it via GitHub Pages (repository Settings → Pages →
+Source: **GitHub Actions**).
+
+## Content
+
+All portfolio content lives in `data/*.ts` (hero, skills, proficiency,
+education, experience, projects, testimonials, social links). SEO metadata is
+in `app/layout.tsx`. Sections with empty data arrays are hidden automatically.
+The contact card fetches the GitHub profile at build time and falls back to
+static data if the API is unavailable.
