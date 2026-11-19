@@ -40,12 +40,12 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] flex-col justify-start overflow-hidden px-6 pb-0 pt-20 md:min-h-screen md:justify-end md:px-12 md:pt-24"
+      className="relative flex min-h-[70svh] flex-col justify-start overflow-hidden px-6 pb-0 pt-20 md:min-h-[70vh] md:justify-end md:px-12 md:pt-24"
     >
       <ParticlesBackground />
       <div className="relative z-10 my-auto max-w-5xl pb-12 md:my-0 md:pb-16">
         <SectionLabel num="01" />
-        <h1 className="font-mono text-[clamp(64px,12vw,160px)] font-bold leading-none text-terminal-text">
+        <h1 className="font-mono text-[clamp(43px,8vw,107px)] font-bold leading-none text-terminal-text">
           <span className="block">{hero.greeting}</span>
           <span className="block">
             {"I'M "}

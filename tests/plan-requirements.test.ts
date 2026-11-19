@@ -143,7 +143,7 @@ describe("Portfolio requirements", () => {
     expect(source).toContain("justify-start");
     expect(source).toContain("my-auto");
     expect(source).toContain("pt-20");
-    expect(source).toContain("md:min-h-screen");
+    expect(source).toContain("md:min-h-[70vh]");
     expect(source).toContain("md:justify-end");
     expect(source).toContain("md:my-0");
     expect(source).toContain("md:pt-24");
