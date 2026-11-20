@@ -9,7 +9,7 @@ export function SectionTitle({ children, className }: SectionTitleProps) {
   return (
     <h2
       className={cn(
-        "mb-12 font-mono text-[clamp(40px,7vw,96px)] font-bold leading-[0.9] text-terminal-text",
+        "mb-12 font-mono text-[clamp(28px,4.5vw,56px)] font-bold leading-[0.9] text-terminal-text",
         className,
       )}
     >
