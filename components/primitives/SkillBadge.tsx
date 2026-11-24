@@ -27,9 +27,11 @@ export function SkillBadge({ skillName, iconifyTag }: SkillBadgeProps) {
               transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
             },
           }}
-          className="inline-flex items-center gap-2 border border-terminal-border px-3 py-1 font-body text-xs text-terminal-soft transition-colors duration-200 hover:border-terminal-signal hover:text-terminal-signal"
+          className="inline-flex items-center gap-3 border border-terminal-border bg-terminal-surface py-1.5 pl-1.5 pr-4 font-body text-sm text-terminal-text transition-colors duration-200 hover:border-terminal-signal hover:bg-terminal-signal/10 hover:text-terminal-signal"
         >
-          <Icon icon={iconifyTag} width={16} height={16} aria-hidden />
+          <span className="flex h-8 w-8 items-center justify-center bg-terminal-text/90 text-terminal-bg">
+            <Icon icon={iconifyTag} width={22} height={22} aria-hidden />
+          </span>
           {skillName}
         </motion.span>
       </TooltipTrigger>

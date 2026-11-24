@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Feedloop">
-  <rect width="120" height="120" fill="#050505"/>
-  <rect x="10" y="10" width="100" height="100" fill="none" stroke="#FF2E88" stroke-width="6"/>
-  <text x="60" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="46" font-weight="700" fill="#f7f7f7" text-anchor="middle">FL</text>
-  <path d="M24 100h72" stroke="#FF2E88" stroke-width="6" stroke-linecap="square"/>
-</svg>

@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="PT Innovation Cloud Service Compute">
-  <rect width="120" height="120" fill="#050505"/>
-  <rect x="10" y="10" width="100" height="100" fill="none" stroke="#00C2FF" stroke-width="6"/>
-  <text x="60" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="46" font-weight="700" fill="#f7f7f7" text-anchor="middle">IC</text>
-  <path d="M24 100h72" stroke="#00C2FF" stroke-width="6" stroke-linecap="square"/>
-</svg>

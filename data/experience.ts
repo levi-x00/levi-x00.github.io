@@ -4,6 +4,7 @@ export const experience: {
   date: string;
   employmentType: string;
   companyLogo: string;
+  companyUrl: string;
   desc: string;
   descBullets?: string[];
 }[] = [
@@ -12,7 +13,8 @@ export const experience: {
     role: "DevOps Architect",
     date: "Sept 2024 - Present",
     employmentType: "Full-Time",
-    companyLogo: "/img/icons/common/innovationcloud.svg",
+    companyLogo: "/img/icons/common/ics-compute.png",
+    companyUrl: "https://icscompute.com/",
     desc: "Architecting secure multi-account AWS platforms and EKS foundations for AI/ML workloads, with reusable infrastructure modules and automated delivery.",
     descBullets: [
       "Architected AWS Landing Zone using Terraform for secure multi-account environments.",
@@ -26,7 +28,8 @@ export const experience: {
     role: "DevOps Engineer Lead",
     date: "Apr 2023 - Apr 2024",
     employmentType: "Full-Time",
-    companyLogo: "/img/icons/common/feedloop.svg",
+    companyLogo: "/img/icons/common/feedloop.png",
+    companyUrl: "https://feedloop.ai/",
     desc: "Led infrastructure provisioning pipelines and cloud cost optimization for a product team running ECS and EKS on AWS.",
     descBullets: [
       "Led design and implementation of CI/CD pipelines for infrastructure provisioning (VPC, Transit Gateway, ECS, EKS) using AWS CodePipeline.",
@@ -40,7 +43,8 @@ export const experience: {
     role: "DevOps Engineer",
     date: "Sept 2022 - Feb 2023",
     employmentType: "Full-Time",
-    companyLogo: "/img/icons/common/seon.svg",
+    companyLogo: "/img/icons/common/seon.png",
+    companyUrl: "https://seon.io/",
     desc: "Improved Terraform-based AWS provisioning and kept application delivery reliable through TeamCity and CodeDeploy pipelines.",
     descBullets: [
       "Enhanced Terraform-based infrastructure provisioning for AWS, improving maintainability and scalability.",
@@ -52,7 +56,8 @@ export const experience: {
     role: "Cloud Consultant",
     date: "Jun 2021 - Aug 2022",
     employmentType: "Full-Time",
-    companyLogo: "/img/icons/common/cloudcomrade.svg",
+    companyLogo: "/img/icons/common/ollion.svg",
+    companyUrl: "https://ollion.com/",
     desc: "Designed and deployed AWS network and storage foundations for clients, automating CloudFormation delivery with Jenkins.",
     descBullets: [
       "Designed and deployed AWS infrastructure including VPC, Transit Gateway, EC2, RDS, and secure SFTP solutions.",
@@ -65,7 +70,8 @@ export const experience: {
     role: "System Engineer",
     date: "Oct 2017 - Jun 2021",
     employmentType: "Full-Time",
-    companyLogo: "/img/icons/common/xtremax.svg",
+    companyLogo: "/img/icons/common/xtremax.png",
+    companyUrl: "https://www.xtremax.com/",
     desc: "Automated multi-cloud provisioning and built serverless security alerting, centralized logging, and monitoring for production systems.",
     descBullets: [
       "Automated AWS and GCP infrastructure provisioning using Infrastructure as Code (CloudFormation, Deployment Manager).",

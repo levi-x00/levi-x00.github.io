@@ -37,5 +37,4 @@ Source: **GitHub Actions**).
 All portfolio content lives in `data/*.ts` (hero, skills, proficiency,
 education, experience, projects, testimonials, social links). SEO metadata is
 in `app/layout.tsx`. Sections with empty data arrays are hidden automatically.
-The contact card fetches the GitHub profile at build time and falls back to
-static data if the API is unavailable.
+The hero portrait is `public/img/levi-photo.jpg`.

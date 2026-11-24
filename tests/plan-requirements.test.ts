@@ -8,6 +8,7 @@ import { hero } from "../data/hero";
 import { proficiency } from "../data/proficiency";
 import { projects } from "../data/projects";
 import { skillGroups } from "../data/skills";
+import { formatDuration } from "../lib/duration";
 import { socialLinks } from "../data/social";
 import { testimonials } from "../data/testimonials";
 
@@ -80,7 +81,7 @@ describe("Portfolio requirements", () => {
       fs.readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     );
 
-    expect(css).toContain("--terminal-signal: #FF3D00");
+    expect(css).toContain("--terminal-signal: #C6FF00");
     expect(css).toContain("--radius: 0px");
     expect(css).toContain(".grid-overlay::before");
     expect(css).toContain(".glitch:hover::before");
@@ -131,23 +132,25 @@ describe("Portfolio requirements", () => {
     expect(cardSource).toContain('className="flex h-full flex-col"');
   });
 
-  it("keeps the contact avatar aligned responsively", async () => {
-    const source = await import("node:fs/promises").then((fs) =>
-      fs.readFile(
-        new URL("../components/sections/ContactSection.tsx", import.meta.url),
-        "utf8",
+  it("shows a circular portrait in the hero section", async () => {
+    const [hero, contact] = await Promise.all(
+      ["Hero", "Contact"].map((name) =>
+        import("node:fs/promises").then((fs) =>
+          fs.readFile(
+            new URL(`../components/sections/${name}Section.tsx`, import.meta.url),
+            "utf8",
+          ),
+        ),
       ),
     );
-
-    expect(source).toContain("md:items-center");
-    expect(source).toContain("mx-auto");
-    expect(source).toContain("md:ml-auto");
-    expect(source).toContain("aspect-square");
-    expect(source).toContain("sm:w-48");
-    expect(source).toContain("md:w-56");
-    expect(source).toContain("lg:w-64");
+    expect(hero).toContain("/img/levi-photo.jpg");
+    expect(hero).toContain("rounded-full");
+    expect(hero).toContain("aspect-square");
+    expect(contact).not.toContain("next/image");
+    expect(
+      existsSync(new URL("../public/img/levi-photo.jpg", import.meta.url)),
+    ).toBe(true);
   });
-
   it("centers mobile hero text vertically without changing desktop alignment", async () => {
     const source = await import("node:fs/promises").then((fs) =>
       fs.readFile(
@@ -201,6 +204,24 @@ describe("Portfolio requirements", () => {
     expect(capabilityText).toContain("TrueWatch");
   });
 
+  it("links every experience logo to the company page", () => {
+    for (const item of experience) {
+      expect(item.companyUrl).toMatch(/^https:\/\//);
+    }
+  });
+  it("formats experience durations, counting both end months", () => {
+    const now = new Date(2026, 10, 24); // Nov 2026
+    expect(formatDuration("Sept 2024 - Present", now)).toBe("2 yrs 3 mos");
+    expect(formatDuration("Apr 2023 - Apr 2024", now)).toBe("1 yr 1 mo");
+    expect(formatDuration("Sept 2022 - Feb 2023", now)).toBe("6 mos");
+    expect(formatDuration("Jun 2021 - Aug 2022", now)).toBe("1 yr 3 mos");
+    expect(formatDuration("Oct 2017 - Jun 2021", now)).toBe("3 yrs 9 mos");
+    expect(formatDuration("Jan 2024 - Dec 2024", now)).toBe("1 yr");
+    expect(formatDuration("sometime - later", now)).toBeNull();
+    for (const item of experience) {
+      expect(formatDuration(item.date, now)).not.toBeNull();
+    }
+  });
   it("ships a logo file for every experience entry", () => {
     for (const item of experience) {
       expect(

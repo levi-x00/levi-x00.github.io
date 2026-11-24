@@ -9,8 +9,8 @@
   --color-terminal-dim: #666666;
   --color-terminal-text: #F0F0F0;
   --color-terminal-soft: #BBBBBB;
-  --color-terminal-signal: #FF3D00;
-  --color-terminal-signal-dim: #991F00;
+  --color-terminal-signal: #C6FF00;
+  --color-terminal-signal-dim: #779900;
   --color-terminal-green: #00FF41;
   --color-terminal-amber: #FFB800;
   --color-terminal-white: #FFFFFF;
@@ -37,17 +37,17 @@
   --card-foreground: 240 240 240;
   --border: 42 42 42;
   --input: 26 26 26;
-  --ring: 255 61 0;
-  --primary: 255 61 0;
+  --ring: 198 255 0;
+  --primary: 198 255 0;
   --primary-foreground: 10 10 10;
   --muted: 26 26 26;
   --muted-foreground: 102 102 102;
-  --accent: 255 61 0;
+  --accent: 198 255 0;
   --accent-foreground: 10 10 10;
   --font-space-mono: "Space Mono", monospace;
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
   --radius: 0px;
-  --terminal-signal: #FF3D00;
+  --terminal-signal: #C6FF00;
 }
 
 @keyframes blink {
@@ -105,13 +105,13 @@ a {
 }
 
 ::selection {
-  background: #FF3D00;
+  background: #C6FF00;
   color: #0A0A0A;
 }
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: #111111; }
-::-webkit-scrollbar-thumb { background: #FF3D00; }
+::-webkit-scrollbar-thumb { background: #C6FF00; }
 
 .grid-overlay::before {
   content: "";
@@ -127,7 +127,7 @@ a {
 .cursor::after {
   content: "_";
   animation: blink 1s step-start infinite;
-  color: #FF3D00;
+  color: #C6FF00;
 }
 
 .glitch {
@@ -146,7 +146,7 @@ a {
 
 .glitch:hover::before {
   opacity: 0.8;
-  color: #FF3D00;
+  color: #C6FF00;
   animation: glitch 0.4s steps(1) infinite;
 }
 
@@ -165,6 +165,6 @@ a {
 
 .progress-brutalist > div {
   height: 100%;
-  background: #FF3D00;
+  background: #C6FF00;
   transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }

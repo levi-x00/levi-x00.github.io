@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { BrutalCard } from "@/components/primitives/BrutalCard";
+import { formatDuration } from "@/lib/duration";
 
 interface ExperienceCardProps {
 	company: string;
@@ -8,6 +9,7 @@ interface ExperienceCardProps {
 	date: string;
 	employmentType: string;
 	companyLogo: string;
+	companyUrl: string;
 	desc: string;
 	descBullets?: string[];
 }
@@ -18,13 +20,22 @@ export function ExperienceCard({
 	date,
 	employmentType,
 	companyLogo,
+	companyUrl,
 	desc,
 	descBullets,
 }: ExperienceCardProps) {
+	const duration = formatDuration(date);
 	return (
 		<BrutalCard>
 			<div className="flex items-start gap-4">
-				<div className="relative h-10 w-10 shrink-0 border border-terminal-border bg-terminal-bg p-1">
+				<a
+					href={companyUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					title={`Visit ${company}`}
+					aria-label={`Visit ${company}`}
+					className="relative block h-10 w-10 shrink-0 border border-terminal-border bg-terminal-bg p-1 transition-shadow duration-200 hover:ring-2 hover:ring-terminal-signal focus-visible:ring-2 focus-visible:ring-terminal-signal"
+				>
 					<Image
 						src={companyLogo}
 						alt={`${company} logo`}
@@ -32,7 +43,7 @@ export function ExperienceCard({
 						className="object-contain p-1"
 						sizes="40px"
 					/>
-				</div>
+				</a>
 				<div>
 					<h3 className="font-mono text-lg font-bold uppercase text-terminal-text">
 						{company}
@@ -42,6 +53,7 @@ export function ExperienceCard({
 					</p>
 					<p className="mt-2 font-mono text-xs text-terminal-amber">
 						{date}
+						{duration ? ` | ${duration}` : ""}
 						{" | "}{employmentType}
 					</p>
 				</div>
