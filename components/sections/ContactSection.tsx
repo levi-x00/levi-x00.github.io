@@ -39,7 +39,6 @@ export function ContactSection() {
 					href={socialLinks.x}
 					icon="ri:twitter-x-fill"
 					label="X"
-					showLabel
 				/>
 			</div>
 		</div>
