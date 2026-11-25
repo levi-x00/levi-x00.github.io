@@ -6,7 +6,7 @@ export function ContactSection() {
 	return (
 		<div>
 			<SectionLabel num="06" />
-			<h2 className="font-mono text-[clamp(28px,4.5vw,56px)] font-bold leading-[0.9] text-terminal-text">
+			<h2 className="font-mono text-[clamp(24px,3.8vw,46px)] font-bold leading-[0.9] text-terminal-text">
 				REACH OUT TO ME!
 			</h2>
 			<p className="mt-8 max-w-xl font-mono text-sm uppercase leading-relaxed tracking-widest text-terminal-soft">
@@ -33,6 +33,12 @@ export function ContactSection() {
 					href={socialLinks.linkedin}
 					icon="mdi:linkedin"
 					label="LINKEDIN"
+					showLabel
+				/>
+				<SocialLink
+					href={socialLinks.x}
+					icon="ri:twitter-x-fill"
+					label="X"
 					showLabel
 				/>
 			</div>

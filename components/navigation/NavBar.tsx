@@ -10,6 +10,7 @@ import { socialLinks } from "@/data/social";
 const navLinks = [
   { href: socialLinks.github, label: "GitHub", icon: "mdi:github" },
   { href: socialLinks.linkedin, label: "LinkedIn", icon: "mdi:linkedin" },
+  { href: socialLinks.x, label: "X", icon: "ri:twitter-x-fill" },
 ];
 
 export function NavBar() {
@@ -31,9 +32,8 @@ export function NavBar() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 border-b border-terminal-border bg-terminal-bg/90 backdrop-blur-sm transition-transform duration-300 ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className={`fixed left-0 right-0 top-0 z-50 border-b border-terminal-border bg-terminal-bg/90 backdrop-blur-sm transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"
+        }`}
     >
       <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 md:px-12">
         <a
